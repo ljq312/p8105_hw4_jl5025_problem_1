@@ -1,0 +1,24 @@
+---
+title: "p8105_hw4_problem_1"
+author: "Jiaqi Li"
+date: "10/25/2017"
+output: html_document
+---
+```{r}
+library(janitor)
+library(tidyr)
+library(dplyr)
+library(tidyverse)
+library(ggridges)
+```
+
+### Problem 1
+```{r Problem_1}
+## Loading data and cleaning data
+pups_data <- readr::read_csv("FAS_pups.csv") %>% 
+  clean_names() %>% 
+  gather(key = developmental_landmarks, value = post_natal_days, pd_ears:pd_walk) %>% 
+  mutate(developmental_landmarks = recode(developmental_landmarks, "pd_ears" = "ears", "pd_eyes" = "eyes", "pd_pivot" = "pivot", "pd_walk" = "walk")) %>% 
+  drop_na() 
+
+```

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"p8105_hw4_problem_1\"\nauthor: \"Jiaqi Li\"\ndate: \"10/25/2017\"\noutput: html_document\n---\n```{r}\nlibrary(janitor)\nlibrary(tidyr)\nlibrary(dplyr)\nlibrary(tidyverse)\nlibrary(ggridges)\n```\n\n### Problem 1\n```{r Problem_1}\n## Loading data and cleaning data\npups_data <- readr::read_csv(\"FAS_pups.csv\") %>% \n  clean_names() %>% \n  gather(key = developmental_landmarks, value = post_natal_days, pd_ears:pd_walk) %>% \n  mutate(developmental_landmarks = recode(developmental_landmarks, \"pd_ears\" = \"ears\", \"pd_eyes\" = \"eyes\", \"pd_pivot\" = \"pivot\", \"pd_walk\" = \"walk\")) %>% \n  drop_na() \n\n```\n",
+    "created" : 1508971718716.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4032046644",
+    "id" : "16D2FD0A",
+    "lastKnownWriteTime" : 1508971931,
+    "last_content_update" : 1508971931489,
+    "path" : "~/Desktop/Data Science_2017Fall/HW/p8105_hw4_jl5025/Problem_1/Problem_1.Rmd",
+    "project_path" : "Problem_1.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
