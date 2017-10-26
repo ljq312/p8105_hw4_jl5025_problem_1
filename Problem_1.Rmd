@@ -10,6 +10,7 @@ library(tidyr)
 library(dplyr)
 library(tidyverse)
 library(ggridges)
+library(DT)
 ```
 
 ### Problem 1
@@ -29,4 +30,11 @@ pups_data %>%
   geom_density_ridges(scale = .85)
 ```
 
-Obviously the maximum of "developmental_landmarks" of "eyes" is higher than others.
+```{r}
+x <- pups_data %>% 
+  group_by(developmental_landmarks) %>% 
+  summarise(mean_deve = mean(post_natal_days))
+datatable(x)
+```
+
+According to the plot and table above, we can conclude that the mean post-natal days for eyes is obviously higher than other three. The mean post-natal days for ears is the lowest among four. And also, compared to the post-natals days for pivot, that for walk is a little bit higher.
