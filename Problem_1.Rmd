@@ -29,3 +29,4 @@ pups_data %>%
   geom_density_ridges(scale = .85)
 ```
 
+Obviously the maximum of "developmental_landmarks" of "eyes" is higher than others.
